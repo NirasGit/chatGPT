@@ -46,14 +46,14 @@
         },
         "AzureSearchService": {
             "type": "string",
-            "defaultValue": "",
+            "defaultValue": "nicsearch",
             "metadata": {
                 "description": "Name of Azure Search Service"
             }
         },
         "AzureSearchIndex": {
             "type": "string",
-            "defaultValue": "",
+            "defaultValue": "spo",
             "metadata": {
                 "description": "Name of Azure Search Index"
             }
@@ -67,7 +67,7 @@
         },
         "AzureSearchUseSemanticSearch": {
             "type": "bool",
-            "defaultValue": false,
+            "defaultValue": true,
             "metadata": {
                 "description": "Use semantic search"
             }
@@ -95,7 +95,7 @@
         },
         "AzureSearchEnableInDomain": {
             "type": "bool",
-            "defaultValue": false,
+            "defaultValue": true,
             "metadata": {
                 "description": "Enable in domain"
             }
@@ -109,7 +109,7 @@
         },
         "AzureSearchFilenameColumn": {
             "type": "string",
-            "defaultValue": "filename",
+            "defaultValue": "sourcepage",
             "metadata": {
                 "description": "Filename column"
             }
@@ -123,7 +123,7 @@
         },
         "AzureSearchUrlColumn": {
             "type": "string",
-            "defaultValue": "url",
+            "defaultValue": "sourcefile",
             "metadata": {
                 "description": "Url column"
             }
@@ -142,7 +142,7 @@
         },
         "AzureOpenAIModelName": {
             "type": "string",
-            "defaultValue": "gpt-35-turbo",
+            "defaultValue": "gpt-4o",
             "metadata": {
                 "description": "Azure OpenAI Model Name"
             }
@@ -169,7 +169,7 @@
         },
         "AzureOpenAIMaxTokens": {
             "type": "int",
-            "defaultValue": 1000,
+            "defaultValue": 1200,
             "metadata": {
                 "description": "Azure OpenAI Max Tokens"
             }
@@ -197,7 +197,7 @@
         },
         "AzureSearchQueryType": {
             "type": "string",
-            "defaultValue": "simple",
+            "defaultValue": "vectorSimpleHybrid",
             "allowedValues": [
                 "simple",
                 "semantic",
@@ -211,7 +211,7 @@
         },
         "AzureSearchVectorFields": {
             "type": "string",
-            "defaultValue": "",
+            "defaultValue": "embedding",
             "metadata": {
                 "description": "Azure Search Vector Fields"
             }
@@ -239,14 +239,14 @@
         },
         "AzureOpenAIEmbeddingName": {
             "type": "string",
-            "defaultValue": "",
+            "defaultValue": "text-embedding-ada-002",
             "metadata": {
                 "description": "Azure OpenAI Embedding Deployment Name"
             }
         },
         "WebAppEnableChatHistory": {
             "type": "bool",
-            "defaultValue": false,
+            "defaultValue": true,
             "metadata": {
                 "description": "Enable chat history by deploying a Cosmos DB instance"
             }
@@ -351,7 +351,7 @@
         }
     },
     "variables": {
-        "WebAppImageName": "DOCKER|sampleappaoaichatgpt.azurecr.io/sample-app-aoai-chatgpt:latest",
+        "WebAppImageName": "DOCKER|sampleappaoaichatgpt2.azurecr.io/sample-app-aoai-chatgpt:latest",
         "cosmosdb_account_name": "[format('db-{0}', parameters('WebsiteName'))]",
         "cosmosdb_database_name": "db_conversation_history",
         "cosmosdb_container_name": "conversations",
